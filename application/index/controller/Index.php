@@ -42,6 +42,9 @@ class Index extends BaseController
         return json($data);
     }
 
+    public function index2(){
+        echo 1;
+    }
 
     public function select()
     {
