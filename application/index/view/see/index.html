@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    {$name|default='未定义'}<br>
+    {$pwd|md5}<br>
+    {$time|date='Y-m-d H:i:s'}<br>
+    {:date('Y-m-d H:i',$time)}<br>
+    {$num|format='%.2f'}<br>
+    <hr>
+    {switch $num}
+        {case 1}1{/case}
+        {case 11}11{/case}
+        {default}没有
+    {/switch}
+    <br>
+    {if $num>11}
+        111
+    {elseif $num==10}
+        222
+    {else}
+        333
+    {/if}
+    <br>
+    {if $user->username=='老王'}
+        是老王
+    {else}
+        不是老王
+    {/if}
+    <br>
+    {notin name='num' value='10,11,12'}
+        num在里面
+    {/notin}
+    <br>
+    {between name="num" value="1,12"}
+    输出内容12
+    {/between}
+    <br>
+    {defined name="NAME"}
+    NAME常量已经定义
+    {/defined}
+    <hr>
+    {foreach $list as $k=>$v}
+        {$k}、{$v['id']}.{$v['title']}<br>
+    {/foreach}
+    <hr>
+    {volist name='list' id='v'}
+        {eq name="v['id']" value='8'}
+            {$key}、{$v['id']}.{$v['title']}<br>
+        {/eq}
+    {/volist}
+    <hr>
+    {volist name='list' id='v' offset='5' length='5'}
+        {$key}、{$v['id']}.{$v['title']}<br>
+    {/volist}
+    <hr>
+    {volist name='list' id='v' mod='2'}
+        {eq name='mod' value='1'}
+            {$key}、{$v['id']}.{$v['title']}<br>
+        {/eq}
+    {/volist}
+</body>
+</html>

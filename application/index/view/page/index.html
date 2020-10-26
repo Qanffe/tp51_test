@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .pagination
+        {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        .pagination li
+        {
+            display: inline-block;
+            padding: 20px;
+        }
+
+    </style>
+</head>
+<body>
+    <div>总数：{$totle}</div>
+    <table border="1">
+        <tr>
+            <th>id</th>
+            <th>名字</th>
+            <th>时间</th>
+        </tr>
+        {foreach $list as $key=>$v}
+        <tr>
+            <th>{$v.id}</th>
+            <th>{$v.title}</th>
+            <th>{$v.time}</th>
+        </tr>
+        {/foreach}
+    </table>
+    {$list|raw}
+
+</body>
+</html>

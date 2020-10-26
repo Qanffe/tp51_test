@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{$title}</title>
+    {block name='include'}{include file='public:nav'}{/block}
+
+    {block name='static'}
+        {load href='__CSS__/moban.css'}
+        {load href='__JS__/moban.js'}
+    {/block}
+</head>
+<body>
+{block name='content'}主体内容{/block}
+</body>
+</html>

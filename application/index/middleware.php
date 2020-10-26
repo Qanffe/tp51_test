@@ -1,0 +1,7 @@
+<?php
+
+//index模块 注册中间件
+return [
+//    app\http\middleware\Check::class,
+//    app\http\middleware\Auto::class
+];
