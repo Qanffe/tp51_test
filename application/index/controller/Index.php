@@ -43,7 +43,7 @@ class Index extends BaseController
     }
 
     public function index2(){
-        echo 3;
+        echo '自动部署设置';
     }
 
     public function select()
