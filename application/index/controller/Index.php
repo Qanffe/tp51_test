@@ -43,7 +43,7 @@ class Index extends BaseController
     }
 
     public function index2(){
-        echo 1;
+        echo 2;
     }
 
     public function select()
